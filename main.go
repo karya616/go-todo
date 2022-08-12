@@ -6,7 +6,9 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -32,10 +34,5 @@ func main() {
 	router.POST("/done/:id", noteController.Done)
 	router.POST("/delete/:id", noteController.Delete)
 
-	//port := ":8000"
-
-	//fmt.Println("aman bos")
-	//log.Fatal(http.ListenAndServe(port, router))
-	http.ListenAndServe(":8000", router)
-
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 }
