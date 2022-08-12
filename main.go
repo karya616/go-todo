@@ -34,7 +34,7 @@ func main() {
 	router.POST("/done/:id", noteController.Done)
 	router.POST("/delete/:id", noteController.Delete)
 
-	port := ":42452"
+	var port = ":42452"
 	fmt.Println("aplikasi jalan di http://localhost:9000")
 	//fmt.Println("aman bos")
 	log.Fatal(http.ListenAndServe(port, router))
