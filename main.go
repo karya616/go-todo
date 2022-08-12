@@ -34,7 +34,7 @@ func main() {
 	router.POST("/done/:id", noteController.Done)
 	router.POST("/delete/:id", noteController.Delete)
 
-	port := ":8080"
+	port := ":9000"
 	fmt.Println("aplikasi jalan di http://localhost:8080")
 	//fmt.Println("aman bos")
 	log.Fatal(http.ListenAndServe(port, router))
