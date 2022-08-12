@@ -1,6 +1,7 @@
 module final_projek_go
 
-go 1.12
+// +heroku goVersion go1.14
+go 1.14
 
 require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
