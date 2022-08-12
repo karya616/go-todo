@@ -3,9 +3,11 @@ package main
 import (
 	"final_projek_go/controllers"
 	"final_projek_go/models"
+	"fmt"
 	"github.com/julienschmidt/httprouter"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+	"log"
 	"net/http"
 )
 
@@ -32,10 +34,10 @@ func main() {
 	router.POST("/done/:id", noteController.Done)
 	router.POST("/delete/:id", noteController.Delete)
 
-	port := ":9000"
-	//fmt.Println("aplikasi jalan di http://localhost:9000")
-	////fmt.Println("aman bos")
-	//log.Fatal(http.ListenAndServe(port, router))
-	http.ListenAndServe("127.0.0.1:"+port, nil)
+	port := ":42452"
+	fmt.Println("aplikasi jalan di http://localhost:9000")
+	//fmt.Println("aman bos")
+	log.Fatal(http.ListenAndServe(port, router))
+	//http.ListenAndServe("127.0.0.1:"+port, nil)
 
 }
