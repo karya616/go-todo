@@ -1,0 +1,1 @@
+web: bin/final_projek_go
