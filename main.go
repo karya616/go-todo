@@ -8,7 +8,6 @@ import (
 	"gorm.io/gorm"
 	"log"
 	"net/http"
-	"os"
 )
 
 func main() {
@@ -34,5 +33,9 @@ func main() {
 	router.POST("/done/:id", noteController.Done)
 	router.POST("/delete/:id", noteController.Delete)
 
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
+	port := ":8000"
+
+	//fmt.Println("aman bos")
+	log.Fatal(http.ListenAndServe(port, router))
+
 }
